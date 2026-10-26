@@ -238,7 +238,7 @@
     };
     reader.onerror = () => alert('Could not read this file.'); reader.readAsText(file);
   }
-  view.addEventListener('click', event => {
+  document.addEventListener('click', event => {
     const nav = event.target.closest('[data-view]');
     if (nav) { currentView = nav.dataset.view; $('#sidebar')?.classList.remove('open'); $('.sidebar')?.classList.remove('open'); render(); return; }
     const button = event.target.closest('[data-action]'); if (!button) return;
