@@ -1,9 +1,9 @@
 {
   "id": "./",
-  "name": "Life Planner",
-  "short_name": "Life Planner",
-  "description": "A calm, personal space for planning your days, routines, wellbeing, learning and goals.",
-  "lang": "en",
+  "name": "Yaşam Planlayıcım",
+  "short_name": "Planlayıcım",
+  "description": "Günlerini, rutinlerini, iyi oluşunu, öğrenmeni ve hedeflerini planlamak için kişisel alanın.",
+  "lang": "tr",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

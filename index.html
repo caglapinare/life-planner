@@ -1,41 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#243c32">
-  <meta name="description" content="A calm, personal space for planning your days, routines, wellbeing, learning and goals.">
+  <meta name="description" content="Günlerini, rutinlerini, iyi oluşunu ve hedeflerini planlamak için kişisel alanın.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Life Planner">
+  <meta name="apple-mobile-web-app-title" content="Yaşam Planlayıcım">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-  <title>Life Planner</title>
+  <title>Yaşam Planlayıcım</title>
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar">
       <a class="brand" href="#today" aria-label="Life Planner home"><span class="brand-mark">✳</span><span>life planner<small>make room for what matters</small></span></a>
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-        <button class="nav-item active" data-view="today"><span>◷</span> Today</button>
-        <button class="nav-item" data-view="tasks"><span>☷</span> My tasks</button>
-        <button class="nav-item" data-view="recurring"><span>▦</span> Weekly & monthly</button>
-        <button class="nav-item" data-view="habits"><span>↻</span> Habits & routines</button>
-        <button class="nav-item" data-view="wellbeing"><span>☼</span> Wellbeing</button>
-        <button class="nav-item" data-view="journal"><span>✎</span> Journaling</button>
-        <button class="nav-item" data-view="career"><span>↗</span> Career & learning</button>
-        <button class="nav-item" data-view="goals"><span>◎</span> Goals & growth</button>
-        <button class="nav-item" data-view="home"><span>⌂</span> Home & errands</button>
-        <button class="nav-item" data-view="fitness"><span>♡</span> Fitness & nutrition</button>
-        <button class="nav-item" data-view="travel"><span>⌁</span> Travel planning</button>
+        <button class="nav-item active" data-view="today"><span>◷</span> Bugün</button>
+        <button class="nav-item" data-view="tasks"><span>☷</span> Görevlerim</button>
+        <button class="nav-item" data-view="recurring"><span>▦</span> Planlarım</button>
+        <button class="nav-item" data-view="habits"><span>↻</span> Alışkanlıklar ve rutinler</button>
+        <button class="nav-item" data-view="wellbeing"><span>☼</span> İyi oluş</button>
+        <button class="nav-item" data-view="journal"><span>✎</span> Günlük</button>
+        <button class="nav-item" data-view="career"><span>↗</span> Kariyer ve öğrenme</button>
+        <button class="nav-item" data-view="goals"><span>◎</span> Hedefler ve gelişim</button>
+        <button class="nav-item" data-view="home"><span>⌂</span> Ev ve işler</button>
+        <button class="nav-item" data-view="fitness"><span>♡</span> Hareket ve beslenme</button>
+        <button class="nav-item" data-view="travel"><span>⌁</span> Seyahat planı</button>
       </nav>
-      <div class="sidebar-bottom"><div class="local-note"><span class="status-dot"></span><span><b>Private by design</b><small>Saved on this device</small></span></div><button class="nav-item" data-view="settings"><span>⚙</span> Settings & backup</button></div>
+      <div class="sidebar-bottom"><div class="local-note"><span class="status-dot"></span><span><b>Gizliliğin öncelikli</b><small>Bu cihazda kayıtlı</small></span></div><button class="nav-item" data-view="settings"><span>⚙</span> Ayarlar ve yedekleme</button></div>
     </aside>
 
     <main class="main-content">
-      <header class="topbar"><button id="mobile-menu" class="icon-button mobile-menu" aria-label="Open navigation">☰</button><div><div class="eyebrow" id="today-date"></div><h1 id="page-title">A little space for you.</h1></div><div class="top-actions"><button id="quick-add" class="button button-primary">＋ <span>Quick add</span></button></div></header>
+      <header class="topbar"><button id="mobile-menu" class="icon-button mobile-menu" aria-label="Open navigation">☰</button><div><div class="eyebrow" id="today-date"></div><h1 id="page-title">A little space for you.</h1></div><div class="top-actions"><button id="quick-add" class="button button-primary">＋ <span>Hızlı ekle</span></button></div></header>
       <div id="toast" class="toast" role="status" aria-live="polite"></div>
       <section id="view" class="view" aria-live="polite"></section>
       <footer class="app-footer">A slower, more intentional day starts here. <span>✳</span></footer>
@@ -44,13 +44,16 @@
   <dialog id="task-dialog" class="modal">
     <form id="task-form" method="dialog">
       <div class="modal-heading"><div><div class="eyebrow">MAKE SPACE FOR IT</div><h2 id="task-dialog-title">Add a task</h2></div><button type="button" class="icon-button" data-close-dialog aria-label="Close">×</button></div>
-      <label>Task name<input id="task-title" name="title" maxlength="140" required placeholder="What would you like to do?"></label>
-      <div class="form-row"><label>Area<select id="task-category" name="category"><option>Personal</option><option>Career</option><option>Wellbeing</option><option>Home</option><option>Fitness</option><option>Travel</option></select></label><label>When<input id="task-date" name="date" type="date" required></label></div>
-      <label>Time (optional)<input id="task-time" name="time" type="time"></label>
-      <div class="modal-actions"><button type="button" class="button button-quiet" data-close-dialog>Cancel</button><button class="button button-primary" type="submit">Save task</button></div>
+      <label>Görev adı<input id="task-title" name="title" maxlength="140" required placeholder="What would you like to do?"></label>
+      <div class="form-row"><label>Kategori<select id="task-category" name="category"><option>Kişisel</option><option>Kariyer</option><option>İyi oluş</option><option>Ev</option><option>Hareket</option><option>Seyahat</option></select></label><label>Tarih<input id="task-date" name="date" type="date" required></label></div>
+      <label>Saat (isteğe bağlı)<input id="task-time" name="time" type="time"></label>
+      <div class="modal-actions"><button type="button" class="button button-quiet" data-close-dialog>İptal</button><button class="button button-primary" type="submit">Görevi kaydet</button></div>
     </form>
   </dialog>
   <input id="import-file" type="file" accept="application/json,.json" hidden>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
   <script src="app.js" defer></script>
 </body>
 </html>
