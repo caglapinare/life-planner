@@ -131,7 +131,15 @@
     if (taskFilter === 'open') tasks = tasks.filter(task => !task.done);
     if (taskFilter === 'done') tasks = tasks.filter(task => task.done);
     if (taskFilter === 'today') tasks = tasks.filter(task => task.date === today());
-    if (taskSearch.trim()) tasks = tasks.filter(task => `${task.title} ${task.category}`.toKeyifsizerCase().includes(taskSearch.toKeyifsizerCase()));
+    if (taskSearch.trim()) {
+  const query = taskSearch.toLocaleLowerCase('tr-TR');
+  tasks = tasks.filter(task =>
+    `${task.title} ${task.category || ''}`
+      .toLocaleLowerCase('tr-TR')
+      .includes(query)
+  );
+}
+
     return `<div class="section-heading"><div><h2>Tüm görevlerin</h2><p>Basit tut. Görevlerini başka bir güne taşıyabilirsin.</p></div><button class="button button-primary" data-action="open-task">＋ Görev ekle</button></div><div class="card"><div class="form-inline" style="margin-bottom:14px"><input class="field" id="task-search" placeholder="Görevlerinde ara…" value="${escapeHTML(taskSearch)}" aria-label="Search tasks"></div><div class="filters">${[['all','Tüm görevler'],['today','Bugün'],['open','Yapılacak'],['done','Tamamlandı']].map(([id,label]) => `<button class="filter-button ${taskFilter === id ? 'active' : ''}" data-action="task-filter" data-filter="${id}">${label}</button>`).join('')}</div>${tasks.length ? `<div class="task-list">${tasks.map(task => taskRow(task)).join('')}</div>` : emptyState('Şimdilik burada bir şey yok','Başka bir filtre dene veya başlamak için görev ekle.','☷')}</div>`;
   }
   function renderHabits() {
