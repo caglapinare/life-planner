@@ -10,6 +10,7 @@
   <meta name="apple-mobile-web-app-title" content="Yaşam Planlayıcım">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <title>Yaşam Planlayıcım</title>
@@ -17,8 +18,8 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <a class="brand" href="#today" aria-label="Life Planner home"><span class="brand-mark">✳</span><span>life planner<small>make room for what matters</small></span></a>
-      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <a class="brand" href="#today" aria-label="Ana sayfa"><span>yaşam planlayıcım<small>önemli olana yer aç</small></span></a>
+      <nav id="main-nav" class="main-nav" aria-label="Ana menü">
         <button class="nav-item active" data-view="today"><span>◷</span> Bugün</button>
         <button class="nav-item" data-view="tasks"><span>☷</span> Görevlerim</button>
         <button class="nav-item" data-view="recurring"><span>▦</span> Planlarım</button>
@@ -35,25 +36,22 @@
     </aside>
 
     <main class="main-content">
-      <header class="topbar"><button id="mobile-menu" class="icon-button mobile-menu" aria-label="Open navigation">☰</button><div><div class="eyebrow" id="today-date"></div><h1 id="page-title">A little space for you.</h1></div><div class="top-actions"><button id="quick-add" class="button button-primary">＋ <span>Hızlı ekle</span></button></div></header>
+      <header class="topbar"><button id="mobile-menu" class="icon-button mobile-menu" aria-label="Menüyü aç">☰</button><div><div class="eyebrow" id="today-date"></div><h1 id="page-title">Kendine ayırdığın alan.</h1></div><div class="top-actions"><button id="quick-add" class="button button-primary">＋ <span>Hızlı ekle</span></button></div></header>
       <div id="toast" class="toast" role="status" aria-live="polite"></div>
       <section id="view" class="view" aria-live="polite"></section>
-      <footer class="app-footer">A slower, more intentional day starts here. <span>✳</span></footer>
+      <footer class="app-footer">Daha sakin, daha bilinçli bir gün burada başlar. <span>✳</span></footer>
     </main>
   </div>
   <dialog id="task-dialog" class="modal">
     <form id="task-form" method="dialog">
-      <div class="modal-heading"><div><div class="eyebrow">MAKE SPACE FOR IT</div><h2 id="task-dialog-title">Add a task</h2></div><button type="button" class="icon-button" data-close-dialog aria-label="Close">×</button></div>
-      <label>Görev adı<input id="task-title" name="title" maxlength="140" required placeholder="What would you like to do?"></label>
+      <div class="modal-heading"><div><div class="eyebrow">ONA YER AÇ</div><h2 id="task-dialog-title">Görev ekle</h2></div><button type="button" class="icon-button" data-close-dialog aria-label="Kapat">×</button></div>
+      <label>Görev adı<input id="task-title" name="title" maxlength="140" required placeholder="Ne yapmak istiyorsun?"></label>
       <div class="form-row"><label>Kategori<select id="task-category" name="category"><option>Kişisel</option><option>Kariyer</option><option>İyi oluş</option><option>Ev</option><option>Hareket</option><option>Seyahat</option></select></label><label>Tarih<input id="task-date" name="date" type="date" required></label></div>
       <label>Saat (isteğe bağlı)<input id="task-time" name="time" type="time"></label>
-      <div class="modal-actions"><button type="button" class="button button-quiet" data-close-dialog>İptal</button><button class="button button-primary" type="submit">Görevi kaydet</button></div>
+      <div class="modal-actions"><button type="button" class="button button-quiet" data-close-dialog>İptal</button><button id="task-submit" class="button button-primary" type="submit">Görevi kaydet</button></div>
     </form>
   </dialog>
   <input id="import-file" type="file" accept="application/json,.json" hidden>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
   <script src="app.js" defer></script>
 </body>
 </html>
